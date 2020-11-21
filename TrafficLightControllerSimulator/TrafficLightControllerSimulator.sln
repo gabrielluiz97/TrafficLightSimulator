@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0-Presentation", "0-Presentation", "{AB0C645D-492A-4C4D-9013-17D35136A25C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Domain", "2-Domain", "{AB8466F5-C1E0-45F8-908B-1FE828CED3F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Application", "1-Application", "{6FDDB99D-3E3B-4F41-B231-F00B1558CCAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficLightSimulator", "TrafficLightSimulator\TrafficLightSimulator.csproj", "{088EC252-5280-4DDE-BDA4-DD47B2C92131}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{F037656D-C95D-4712-8C7C-B67552A09B8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{95FAD39E-B90F-487F-8B63-54908AE87C8E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Integration", "3-Integration", "{1A6C7200-EBDA-4031-A28F-11E1EFA412E8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{088EC252-5280-4DDE-BDA4-DD47B2C92131}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{088EC252-5280-4DDE-BDA4-DD47B2C92131}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{088EC252-5280-4DDE-BDA4-DD47B2C92131}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{088EC252-5280-4DDE-BDA4-DD47B2C92131}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F037656D-C95D-4712-8C7C-B67552A09B8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F037656D-C95D-4712-8C7C-B67552A09B8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F037656D-C95D-4712-8C7C-B67552A09B8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F037656D-C95D-4712-8C7C-B67552A09B8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95FAD39E-B90F-487F-8B63-54908AE87C8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95FAD39E-B90F-487F-8B63-54908AE87C8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95FAD39E-B90F-487F-8B63-54908AE87C8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95FAD39E-B90F-487F-8B63-54908AE87C8E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{088EC252-5280-4DDE-BDA4-DD47B2C92131} = {AB0C645D-492A-4C4D-9013-17D35136A25C}
+		{F037656D-C95D-4712-8C7C-B67552A09B8E} = {6FDDB99D-3E3B-4F41-B231-F00B1558CCAF}
+		{95FAD39E-B90F-487F-8B63-54908AE87C8E} = {AB8466F5-C1E0-45F8-908B-1FE828CED3F8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C6797B47-0CFE-4869-989F-441FC32F6C81}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,11 @@
+C:\Users\gabri\source\repos\TrafficLightControllerSimulator\TrafficLightControllerSimulator\bin\Debug\netcoreapp2.1\TrafficLightControllerSimulator.deps.json
+C:\Users\gabri\source\repos\TrafficLightControllerSimulator\TrafficLightControllerSimulator\bin\Debug\netcoreapp2.1\TrafficLightControllerSimulator.runtimeconfig.json
+C:\Users\gabri\source\repos\TrafficLightControllerSimulator\TrafficLightControllerSimulator\bin\Debug\netcoreapp2.1\TrafficLightControllerSimulator.runtimeconfig.dev.json
+C:\Users\gabri\source\repos\TrafficLightControllerSimulator\TrafficLightControllerSimulator\bin\Debug\netcoreapp2.1\TrafficLightControllerSimulator.dll
+C:\Users\gabri\source\repos\TrafficLightControllerSimulator\TrafficLightControllerSimulator\bin\Debug\netcoreapp2.1\TrafficLightControllerSimulator.pdb
+C:\Users\gabri\source\repos\TrafficLightControllerSimulator\TrafficLightControllerSimulator\obj\Debug\netcoreapp2.1\TrafficLightControllerSimulator.csprojAssemblyReference.cache
+C:\Users\gabri\source\repos\TrafficLightControllerSimulator\TrafficLightControllerSimulator\obj\Debug\netcoreapp2.1\TrafficLightControllerSimulator.AssemblyInfoInputs.cache
+C:\Users\gabri\source\repos\TrafficLightControllerSimulator\TrafficLightControllerSimulator\obj\Debug\netcoreapp2.1\TrafficLightControllerSimulator.AssemblyInfo.cs
+C:\Users\gabri\source\repos\TrafficLightControllerSimulator\TrafficLightControllerSimulator\obj\Debug\netcoreapp2.1\TrafficLightControllerSimulator.dll
+C:\Users\gabri\source\repos\TrafficLightControllerSimulator\TrafficLightControllerSimulator\obj\Debug\netcoreapp2.1\TrafficLightControllerSimulator.pdb
+C:\Users\gabri\source\repos\TrafficLightControllerSimulator\TrafficLightControllerSimulator\obj\Debug\netcoreapp2.1\TrafficLightControllerSimulator.genruntimeconfig.cache
