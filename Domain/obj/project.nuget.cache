@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "m7i+o23sOqRXUJiqKHWeNbXqrx/CsgCgVJWVAXkdyzdfqVRQP/TaIA4PLbf9wYxYQaJeXosynOksHOY6FMB6Jw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\gabri\\Documents\\TrafficLightSimulator\\Domain\\Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gabri\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\gabri\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "TrafficLightSimulator";
+}
+
+<div>
+    <button type="button" class="PowerOnSystem" onclick="PowerOnSystem();">
+        <i></i> Ligar Sistema
+    </button>
+    <br />
+    <br />
+    <button type="button" class="PowerOffSystem" onclick="PowerOffSystem();">
+        <i></i> Desligar Sistema
+    </button>
+</div>
+
+<script>
+      function PowerOnSystem() {
+       $.ajax({
+                url: '@Url.Action("PowerOn")',
+                type: 'put',
+                dataType: 'json',
+                //data: { transitionTIme : },
+                success: function (data) {
+                    if (data.Success) {
+                        //toastr.success(data.Message);
+                    }
+                },
+                error: function () {
+                    //toastr.error("Houve um erro ao processar a requisição.");
+                },
+            });
+     };
+
+    function PowerOffSystem() {
+       $.ajax({
+                url: '@Url.Action("PowerOff")',
+                type: 'put',
+                dataType: 'json',
+                success: function (data) {
+                    if (data.Success) {
+                       // toastr.success(data.Message);
+                    }
+                },
+                error: function () {
+                    //toastr.error("Houve um erro ao processar a requisição.");
+                },
+            });
+     };
+
+
+
+</script>

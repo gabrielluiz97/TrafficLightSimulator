@@ -1,0 +1,234 @@
+﻿@{
+    ViewData["Title"] = "TrafficLightSimulator";
+}
+<br />
+<br />
+<h2>Controlador Semáforos</h2>
+<div>
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-md-2">
+            <button type="button" class="PowerOnSystem" onclick="PowerOnSystem();">
+                <i></i> Ligar Sistema
+            </button>
+        </div>
+        <div class="col-md-2">
+            <button type="button" class="PowerOffSystem" onclick="PowerOffSystem();">
+                <i></i> Desligar Sistema
+            </button>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-md-2">
+            <label>Tempo para desligar luz Vermelha</label> </>
+        </div>
+        <div class="col-md-2">
+            <label>Tempo para desligar luz Amarela</label> </>
+        </div>
+        <div class="col-md-2">
+            <label>Tempo para desligar luz Verde</label> </>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-2">
+            <input type="text" id="PresetRedLightTimeLeft" value="@ViewBag.PresetRedLightTimeLeft" />
+            <br />
+            <button type="button" class="PowerOffSystem" onclick="PresetRedLightTimeLeft();">
+                <i></i> Salvar
+            </button>
+        </div>
+        <div class="col-md-2">
+            <input type="text" id="PresetYellowLightTimeLeft" value="@ViewBag.PresetYellowLightTimeLeft" />
+            <br />
+            <button type="button" class="PowerOffSystem" onclick="PresetYellowLightTimeLeft();">
+                <i></i> Salvar
+            </button>
+        </div>
+        <div class="col-md-2">
+            <input type="text" id="PresetGreenLightTimeLeft" value="@ViewBag.PresetGreenLightTimeLeft" />
+            <br />
+            <button type="button" class="PowerOffSystem" onclick="PresetGreenLightTimeLeft();">
+                <i></i> Salvar
+            </button>
+        </div>
+    </div>
+    @*viewComponent*@
+    <div id="DinamicList">
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="row col-md-4  table-bordered">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>
+                            Luz
+                        </th>
+                        <th>
+                            Tempo para desligamento
+                        </th>
+                        <th>
+                            Tempo restante
+                        </th>
+                        <th>
+                            Status
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Vermelho</td>
+                        <td>@ViewBag.PresetRedLightTimeLeft</td>
+                        <td>@ViewBag.RedLightTimeLeft</td>
+                        <td> @(ViewBag.RedLighttOn ? "Ligado":"Desligado")</td>
+                    </tr>
+                    <tr>
+                        <td>Amarelo</td>
+                        <td>@ViewBag.PresetYellowLightTimeLeft</td>
+                        <td>@ViewBag.YellowLightTimeLeft</td>
+                        <td> @(ViewBag.YellowLightOn ? "Ligado":"Desligado")</td>
+                    </tr>
+                    <tr>
+                        <td>Verde</td>
+                        <td>@ViewBag.PresetGreenLightTimeLeft</td>
+                        <td>@ViewBag.GreenLightTimeLeft</td>
+                        <td> @(ViewBag.GreenLightOn ? "Ligado":"Desligado")</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="row col-md-4  table-bordered">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>
+                            Status Do Sistema
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@(ViewBag.On?"Ligado":"Desligado")</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        @*  *@
+    </div>
+   @*//<script src="toastr.js"></script>*@
+    <script>
+        function UpdatePage() {
+            $.ajax({
+                url: '@Url.Action("Index", "Home")',
+                type: 'GET',
+                dataType: 'html',
+                success: function (data) {
+                        var content = $(data).find("#DinamicList");
+                        $("#DinamicList").replaceWith(content);
+                },
+                error: function () {
+                    //toastr.error("Houve um erro ao processar a requisição.");
+                    //console.log("alo");
+                },
+            });
+        }
+
+        setInterval('UpdatePage();', 1000);
+       function PowerOnSystem() {
+             $.ajax({
+                url: '@Url.Action("PowerOn", "TafficLightSimulator")',
+                type: 'post',
+                dataType: 'json',
+                //data: { transitionTIme : },
+                success: function (data) {
+                    if (data.Success) {
+                        //toastr.success(data.Message);
+                    }
+                },
+                error: function () {
+                    //toastr.error("Houve um erro ao processar a requisição.");
+                },
+            });
+       };
+
+      function PowerOffSystem() {
+       $.ajax({
+                url: '@Url.Action("PowerOff", "TafficLightSimulator")',
+                type: 'post',
+                dataType: 'json',
+                //data: { transitionTIme : },
+                success: function (data) {
+                    if (data.Success) {
+                        //toastr.success(data.Message);
+                    }
+                },
+                error: function () {
+                    //toastr.error("Houve um erro ao processar a requisição.");
+                },
+            });
+     };
+
+        function PresetYellowLightTimeLeft() {
+            var PresetYellowLightTimeLeft = $("#PresetYellowLightTimeLeft").val();
+            $.ajax({
+                url: '@Url.Action("PresetYellowLightTimeLeft", "TafficLightSimulator")',
+                data: { presetValue: PresetYellowLightTimeLeft},
+                type: 'post',
+                dataType: 'json',
+                success: function (data) {
+                    if (data.Success) {
+                        window.location.reload();
+                    }
+                },
+                error: function () {
+                    //toastr.error("Houve um erro ao processar a requisição.");
+                },
+            });
+        };
+
+        function PresetGreenLightTimeLeft() {
+            var PresetGreenLightTimeLeft = $("#PresetGreenLightTimeLeft").val();
+            $.ajax({
+                url: '@Url.Action("PresetGreenLightTimeLeft", "TafficLightSimulator")',
+                data: { presetValue: PresetGreenLightTimeLeft },
+                type: 'post',
+                dataType: 'json',
+                success: function (data) {
+                    if (data.Success) {
+                        window.location.reload();
+                    }
+                },
+                error: function () {
+                    //toastr.error("Houve um erro ao processar a requisição.");
+                },
+            });
+     };
+
+       function PresetRedLightTimeLeft() {
+            var PresetRedLightTimeLeft = $("#PresetRedLightTimeLeft").val();
+               $.ajax({
+                url: '@Url.Action("PresetRedLightTimeLeft", "TafficLightSimulator")',
+                data: { presetValue: PresetRedLightTimeLeft },
+                type: 'post',
+                dataType: 'json',
+                success: function (data) {
+                    if (data.Success) {
+                        window.location.reload();
+                    }
+                },
+                error: function () {
+                    //toastr.error("Houve um erro ao processar a requisição.");
+                },
+            });
+     };
+
+
+
+    </script>
